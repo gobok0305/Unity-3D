@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StudyDictionary : MonoBehaviour
-{
+{ 
     public Dictionary<string, int> persons = new Dictionary<string, int>();
 
 
@@ -13,7 +13,7 @@ public class StudyDictionary : MonoBehaviour
         persons.Add("영희", 15); //중복된 이름의 키값이 있으면 덮어써 버린다. / 뒤에 있는 값은 같아도 상관없음
         persons.Add("둥수", 17);
 
-        persons["철수"] =13; //철수 나이 변경 (값을 덮어 씌운다)
+        persons["철수"] = 13; //철수 나이 변경 (값을 덮어 씌운다)
 
         int age = persons["철수"]; //key 값으로 value를 출력!
         Debug.Log($" 철수의 나이는 {age}입니다. ");
