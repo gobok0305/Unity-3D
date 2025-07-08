@@ -14907,8 +14907,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.19
+  m_Center: {x: -0.06, y: 0.1, z: -0.03}
 --- !u!54 &6084542118598048051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20094,12 +20094,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 5830794085472444084}
     m_Modifications:
     - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 874244544889619522, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20133,6 +20145,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 874244544889619523, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 874244544889619524, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -20141,29 +20157,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChargingPop
       objectReference: {fileID: 0}
+    - target: {fileID: 874244544971278943, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 874244544971278944, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244545130783658, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 874244545130783659, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 874244545173388199, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 874244545173388200, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244545988735133, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 874244545988735134, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 874244546185165741, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 874244546185165742, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 874244546553141202, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 874244546553141203, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 874244546573149588, guid: 0728f683564eb00408dbd34352577569, type: 3}
+      propertyPath: scalingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 874244546573149589, guid: 0728f683564eb00408dbd34352577569, type: 3}
       propertyPath: m_Materials.Array.size
