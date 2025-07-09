@@ -61,6 +61,13 @@ public class BoardBar : MonoBehaviour
 
     public GameObject PopDonut()
     {
+        if (barStack.Count == 0)
+        {
+            Debug.LogWarning("pop을 시도했지만 스택이 비었다 임마!");
+            return null;
+        }
+        return barStack.Pop();
+        
         GameObject donut = barStack.Pop(); // Stack에서 GameObject를 꺼내는 기능
 
         return donut; // 꺼낸 도넛을 반환
