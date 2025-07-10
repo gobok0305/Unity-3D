@@ -15,7 +15,7 @@ public class Permutation : MonoBehaviour
         if (start == arr.Length) //3이되면 끝을 내겠다
         {
             Debug.Log(string.Join(",", arr)); // ,붙혀서 인덱스에 있는 값을 로그로 작성해줌
-            return;
+            return;                           //  현재 만들어진 인덱스 값을 뱉어냄
         }
 
         for (int i = start; i < arr.Length; i++)
