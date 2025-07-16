@@ -2,23 +2,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    public float speed = 5;
+
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(other.gameObject); // 
-
-            Destroy(other.gameObject, 10f); //
-        }
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-
+        Vector3 dir = Vector3.up;
+        transform.position += dir * speed * Time.deltaTime;
     }
 }
