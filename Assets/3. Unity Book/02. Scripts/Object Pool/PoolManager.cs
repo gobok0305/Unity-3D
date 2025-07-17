@@ -9,7 +9,7 @@ public class PoolManager : MonoBehaviour
     void Awake()
     {
         //생성 - 꺼내쓰고 - 집어넣는 기능 가능
-        pool = new ObjectPool<GameObject>(CreateObject, OnGetObject, OnReleaseObject, OnDestroyObject, defaultCapacity: 10, maxSize: 100); 
+        pool = new ObjectPool<GameObject>(CreateObject, OnGetObject, OnReleaseObject, OnDestroyObject); 
     }
 
     private GameObject CreateObject()
@@ -20,7 +20,7 @@ public class PoolManager : MonoBehaviour
         return obj;
     }
 
-    private void OnGetObject(GameObject obj)
+    private void OnGetObject(GameObject obj) //꺼내는 기능
     {
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         rb.linearVelocity = Vector3.zero;
@@ -30,19 +30,19 @@ public class PoolManager : MonoBehaviour
         obj.SetActive(true);
     }
 
-    private void OnReleaseObject(GameObject obj)
+    private void OnReleaseObject(GameObject obj) //집어 넣는 기능
     {
         obj.SetActive(false);
     }
 
-    private void OnDestroyObject(GameObject obj)
+    private void OnDestroyObject(GameObject obj) // 파괴하는 기능
     {
         Destroy(obj);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //pool에서 오브젝트를 하나 꺼내는 방법
         {
             GameObject obj = pool.Get();
             obj.SetActive(true);
