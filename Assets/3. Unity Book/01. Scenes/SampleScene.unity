@@ -628,6 +628,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePostition: {fileID: 1406338866}
+  poolSize: 10
+  bulletObjectPool: []
 --- !u!114 &336885573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,28 +773,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434838189}
-  - component: {fileID: 434838188}
+  - component: {fileID: 434838190}
   m_Layer: 9
-  m_Name: Enemy manager (1)
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &434838188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434838187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 4842214898356511689, guid: a234f3abbeb0bb3449ae406f038379df, type: 3}
 --- !u!4 &434838189
 Transform:
   m_ObjectHideFlags: 0
@@ -808,6 +796,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434838190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434838187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+  enemyObjectPool: []
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyFactory: {fileID: 0}
+  createTime: 1
 --- !u!1 &475965544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,28 +1091,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960448168}
-  - component: {fileID: 960448167}
+  - component: {fileID: 960448169}
   m_Layer: 9
-  m_Name: Enemy manager (3)
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &960448167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960448166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 4842214898356511689, guid: a234f3abbeb0bb3449ae406f038379df, type: 3}
 --- !u!4 &960448168
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,6 +1114,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960448169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960448166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+  enemyObjectPool: []
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyFactory: {fileID: 0}
+  createTime: 1
 --- !u!4 &1050161342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bd16a121ccdf0674daacc3277d88c3c0, type: 3}
@@ -1401,28 +1419,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1674829596}
-  - component: {fileID: 1674829595}
+  - component: {fileID: 1674829597}
   m_Layer: 9
-  m_Name: Enemy manager (2)
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1674829595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674829594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 4842214898356511689, guid: a234f3abbeb0bb3449ae406f038379df, type: 3}
 --- !u!4 &1674829596
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,6 +1442,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674829597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674829594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+  enemyObjectPool: []
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyFactory: {fileID: 0}
+  createTime: 1
 --- !u!1 &1707171024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,28 +1473,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1707171026}
-  - component: {fileID: 1707171025}
+  - component: {fileID: 1707171027}
   m_Layer: 9
-  m_Name: Enemy manager (4)
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1707171025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707171024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 4842214898356511689, guid: a234f3abbeb0bb3449ae406f038379df, type: 3}
 --- !u!4 &1707171026
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,6 +1496,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707171027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707171024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+  enemyObjectPool: []
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyFactory: {fileID: 0}
+  createTime: 1
 --- !u!1 &1724658917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,28 +2158,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107477791}
-  - component: {fileID: 2107477790}
+  - component: {fileID: 2107477792}
   m_Layer: 9
-  m_Name: Enemy manager
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2107477790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107477789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 4842214898356511689, guid: a234f3abbeb0bb3449ae406f038379df, type: 3}
 --- !u!4 &2107477791
 Transform:
   m_ObjectHideFlags: 0
@@ -2161,6 +2181,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107477792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107477789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6324b438911a140b97179a35c2ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+  enemyObjectPool: []
+  spawnPoints:
+  - {fileID: 2107477791}
+  - {fileID: 434838189}
+  - {fileID: 434838189}
+  - {fileID: 960448168}
+  - {fileID: 1707171026}
+  enemyFactory: {fileID: 0}
+  createTime: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

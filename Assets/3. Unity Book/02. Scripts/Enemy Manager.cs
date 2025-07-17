@@ -1,34 +1,95 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
-    private float currentTime; //타이머
+    public int poolSize = 10;
 
-    private float minTime = 1;
-    private float maxTime = 5;
+    // public GameObject[] enemyObjectPool; // 배열
+    // public List<GameObject> enemyObjectPool; // 리스트
+    public Queue<GameObject> enemyObjectPool; // 큐
 
-    public float createTime = 1f; // 생성주기
+    public Transform[] spawnPoints;
 
     public GameObject enemyFactory;
 
-    private void Start()
+    private float currentTime; // 타이머
+    private float minTime = 1;
+    private float maxTime = 5;
+    public float createTime = 1f; // 생성 주기
+
+    void Start()
     {
         createTime = Random.Range(minTime, maxTime);
+
+        // enemyObjectPool =  new GameObject[poolSize]; // 배열
+        // enemyObjectPool = new List<GameObject>(); // 리스트
+        enemyObjectPool = new Queue<GameObject>(); // 큐
+
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject enemy = Instantiate(enemyFactory);
+
+            // enemyObjectPool[i] = enemy; // 배열
+            // enemyObjectPool.Add(enemy); // 리스트
+            enemyObjectPool.Enqueue(enemy); // 큐
+
+            enemy.SetActive(false);
+        }
     }
 
-    private void Update()
+    void Update()
     {
         currentTime += Time.deltaTime;
 
-        if (currentTime > createTime) //타이머가 생성주기를 넘었다면
+        if (currentTime > createTime) // 랜덤한 시간이 될 때 마다 랜덤한 위치에 Enemy 생성
         {
-            // 생성
-            GameObject enemy = Instantiate(enemyFactory);
-            enemy.transform.position = transform.position;
+            // 큐
+            if (enemyObjectPool.Count > 0)
+            {
+                currentTime = 0f;
+                createTime = Random.Range(minTime, maxTime);
 
-            // 타이머 초기화 
-            currentTime = 0f;
+                GameObject enemy = enemyObjectPool.Dequeue();
+
+                int ranIndex = Random.Range(0, spawnPoints.Length);
+                Transform spawnPoint = spawnPoints[ranIndex];
+
+                enemy.transform.position = spawnPoint.position;
+                enemy.SetActive(true);
+            }
         }
-
     }
+
+
+    //리스트
+    //if (enemyObjectPool.Count > 0)
+    //{
+    //   // 타이머 초기화 
+    //   currentTime = 0f;
+    //   createTime = Random.Range(minTime, maxTime);
+
+    //    GameObject enemy = enemyObjectPool[0];
+    //    enemyObjectPool.Remove(enemy);
+
+    //    int ranTndex = Random.Range(0, spawnPoints.Length);
+    //    Transform spawnPoint = spawnPoints[ranTndex];
+
+    //    enemy.transform.position = spawnPoint.position;
+    //    enemy.SetActive(true);
+    //}
+
+    // 리스트
+    //for (int i = 0; i < poolSize; i++)
+    //{
+    //    GameObject enemy = enemyObjectPool[i];
+    //    if (!enemy.activeSelf)
+    //    {
+    //        enemy.transform.position = transform.position;
+    //        enemy.SetActive(true);
+
+    //        break;
+    //    }
+    //}
+
 }
