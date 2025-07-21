@@ -7,6 +7,8 @@ public class FPSPlayerFire : MonoBehaviour
     public GameObject bombFactory;
 
     public float throwPower = 15;
+    public int weaponPower = 5;
+
     public GameObject bulletEffect;
     public ParticleSystem ps;
     
@@ -19,6 +21,9 @@ public class FPSPlayerFire : MonoBehaviour
 
     private void Update()
     {
+        if (FPSGameManager.Instance.gState != FPSGameManager.GameState.Run)
+            return;
+
         if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 클릭
         {
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -27,10 +32,20 @@ public class FPSPlayerFire : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo))
             {
-                bulletEffect.transform.position = hitInfo.point;
-                bulletEffect.transform.forward = hitInfo.normal; //파티클이 tranform 앞으로 나오도록!
+                // raycast를 맞은 대상이 enemy가 맞은 경우
+                if (hitInfo.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    EnemyFSM eFSM = hitInfo.transform.GetComponent<EnemyFSM>();
+                    eFSM.HitEnemy(weaponPower);
+                }
+                else // raycast를 맞은 대상이 enemy가 아닌 경우
+                {
+                    bulletEffect.transform.position = hitInfo.point;
+                    bulletEffect.transform.forward = hitInfo.normal; //파티클이 tranform 앞으로 나오도록!
 
-                ps.Play();
+                    ps.Play();
+                }
+        
             }
         }
 

@@ -31,7 +31,7 @@ public class Singleton<T> : MonoBehaviour where T : Component //컴포넌트로
         if (instance == null)
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject); //씬 전환 기능
         }
         else
             Destroy(gameObject);
