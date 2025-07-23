@@ -46,9 +46,12 @@ public class AStarMover : MonoBehaviour
             int index = 1;
             foreach (Node node in pathList)
             {
-                Node nextNode = pathList[index];
-                Debug.DrawLine(node.pos, nextNode.pos, Color.green);
-                index++;
+                if (index < pathList.Count)
+                {
+                    Node nextNode = pathList[index];
+                    Debug.DrawLine(node.pos, nextNode.pos, Color.green);
+                    index++;
+                }
             }
 
         }
