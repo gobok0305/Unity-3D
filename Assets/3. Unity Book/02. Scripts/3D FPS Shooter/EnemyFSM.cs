@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AI;
 
 public class EnemyFSM : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class EnemyFSM : MonoBehaviour
     private Transform player; // 타겟
 
     private Animator anim;
-    private NavMeshAgent smith;
 
     public float findDistance = 8f; //탐지거리
     public float attackDistance = 3f; //적의 공격가능 거리
@@ -40,7 +38,6 @@ public class EnemyFSM : MonoBehaviour
         originPos = transform.position;
         originRot = transform.rotation;
         anim = transform.GetComponentInChildren<Animator>();
-        smith = GetComponent<NavMeshAgent>();
 
         Cursor.visible = false; //커서 안보이는 기능
         Cursor.lockState = CursorLockMode.Locked; //커서 esc눌러야 잠금풀림
@@ -94,19 +91,10 @@ public class EnemyFSM : MonoBehaviour
         //타겟이 공격 거리보다 먼 경우 -> 이동
         else if (Vector3.Distance(transform.position, player.position) > attackDistance)
         {
-            //Vector3 dir = (player.position - transform.position).normalized;
-            //cc.Move(dir * moveSpeed * Time.deltaTime);
+            Vector3 dir = (player.position - transform.position).normalized;
+            cc.Move(dir * moveSpeed * Time.deltaTime);
 
-            //transform.forward = dir; //이동방향을 정면으로 작용
-
-
-            // 플레이어가 길찾기를 할때 ai기능으로 바뀌는 것
-            smith.isStopped = true;
-            smith.ResetPath();
-            
-            smith.stoppingDistance = attackDistance;
-            smith.SetDestination(player.position);
-
+            transform.forward = dir; //이동방향을 정면으로 작용
         }
         else //타겟이 공격 거리 내에 있는 경우 -> 공격 전환
         {
@@ -148,10 +136,6 @@ public class EnemyFSM : MonoBehaviour
 
         hp -= hitPower;
 
-        //살짝 미끄러지는거 방지
-        smith.isStopped = true;
-        smith.ResetPath(); // 현재 설정된 경로를 clear
-
         if (hp > 0) //공격을 받았는데 살았다면
         {
             anim.SetTrigger("Damaged");
@@ -179,18 +163,12 @@ public class EnemyFSM : MonoBehaviour
         //0.1 = 대략 10cm (넉넉하게 잢 잡기)
         if (Vector3.Distance(transform.position, originPos) > 0.1f)
         {
-            //Vector3 dir = (originPos - transform.position).normalized;
-            //cc.Move(dir * moveSpeed * Time.deltaTime);
-            //transform.forward = dir;
-
-            smith.SetDestination(originPos);
-            smith.stoppingDistance = 0f;
+            Vector3 dir = (originPos - transform.position).normalized;
+            cc.Move(dir * moveSpeed * Time.deltaTime);
+            transform.forward = dir;
         }
         else //원래 위치로 돌아온 경우
         {
-            smith.isStopped = true;
-            smith.ResetPath();
-
             transform.position = originPos;
             transform.rotation = originRot;
             hp = 15;
