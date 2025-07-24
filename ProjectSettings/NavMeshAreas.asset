@@ -74,6 +74,7 @@ NavMeshProjectSettings:
   - serializedVersion: 3
     agentTypeID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     agentRadius: 0.15
     agentHeight: 1.8
     agentSlope: 45
@@ -96,6 +97,12 @@ NavMeshProjectSettings:
     agentHeight: 2
     agentSlope: 45
     agentClimb: 1
+=======
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.75
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
 =======
     agentRadius: 0.5
     agentHeight: 2

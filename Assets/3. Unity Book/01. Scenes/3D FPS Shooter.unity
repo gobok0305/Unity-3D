@@ -6197,6 +6197,7 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1381740570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6268,6 +6269,8 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 487eef9aff9d0f543836d5af5ab26430, type: 3}
 =======
+=======
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
 --- !u!1 &1324470408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6533,6 +6536,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
+=======
 >>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
 --- !u!1001 &1461380365
 PrefabInstance:
@@ -9022,6 +9028,7 @@ Transform:
   m_Father: {fileID: 97002698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1740391531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 199458, guid: 29d86feb88bf925428f9d7de6d4b401f, type: 3}
@@ -9126,6 +9133,8 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25100eeb851e8964d8359e14d7fc37ca, type: 3}
 =======
+=======
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
 --- !u!1 &1759280341
 GameObject:
   m_ObjectHideFlags: 0
@@ -9236,6 +9245,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
+=======
 >>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
 --- !u!1 &1930327213
 GameObject:
@@ -12082,11 +12094,14 @@ SceneRoots:
   - {fileID: 480027920}
   - {fileID: 582697473}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1690620705}
   - {fileID: 55058416}
   - {fileID: 97002698}
   - {fileID: 1779211040}
 =======
+=======
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
   - {fileID: 522950335}
   - {fileID: 1324470414}
   - {fileID: 435374071}
@@ -12097,4 +12112,7 @@ SceneRoots:
   - {fileID: 161633662}
   - {fileID: 1427403500}
   - {fileID: 1117747407}
+<<<<<<< HEAD
+>>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
+=======
 >>>>>>> parent of f6e4bcf (3FPS Shooter (517~551p))
