@@ -42,8 +42,8 @@ public class EnemyFSM : MonoBehaviour
         anim = transform.GetComponentInChildren<Animator>();
         smith = GetComponent<NavMeshAgent>();
 
-        Cursor.visible = false; //커서 안보이는 기능
-        Cursor.lockState = CursorLockMode.Locked; //커서 esc눌러야 잠금풀림
+        //Cursor.visible = false; //커서 안보이는 기능
+        //Cursor.lockState = CursorLockMode.Locked; //커서 esc눌러야 잠금풀림
     }
 
     private void Update()

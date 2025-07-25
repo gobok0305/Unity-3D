@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/2. Algorithm/01. Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/3. Unity Book/01. Scenes/3D FPS Shooter/LoginScene.unity
+    guid: f0c31870c04819b439ac46cd0d9e74b7
+  - enabled: 1
+    path: Assets/3. Unity Book/01. Scenes/3D FPS Shooter/LoadingScene.unity
+    guid: 8d7dbc15c3af3e8448e42e691cd419bf
+  - enabled: 1
+    path: Assets/3. Unity Book/01. Scenes/3D FPS Shooter/MainScene.unity
+    guid: a79cd209ec0135c4bacbc585824fb5a7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
