@@ -6,6 +6,7 @@ using System.Collections;
 
 public class FPSPlayerFire : MonoBehaviour
 {
+    #region 멤버변수
     private enum WeaponMode { Normal, Sniper }
     private WeaponMode wMode;
 
@@ -23,6 +24,7 @@ public class FPSPlayerFire : MonoBehaviour
 
     public GameObject crosshair01;
     public GameObject crosshair02;
+    public GameObject crosshair02_zoom;
 
     public TextMeshProUGUI wModeText;
     public GameObject[] eff_Flash;
@@ -31,6 +33,7 @@ public class FPSPlayerFire : MonoBehaviour
     public int weaponPower = 5;
 
     private bool ZoomMode = false;
+    #endregion
 
     void Start()
     {
@@ -45,6 +48,7 @@ public class FPSPlayerFire : MonoBehaviour
         if (FPSGameManager.Instance.gState != FPSGameManager.GameState.Run)
             return;
 
+        #region 마우스 왼쪽 클릭 -> 총 발사
         if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭
         {
             if (anim.GetFloat("MoveMotion") == 0)
@@ -71,7 +75,9 @@ public class FPSPlayerFire : MonoBehaviour
                 }
             }
         }
+        #endregion
 
+        #region 마우스 오른족 클릭 -> 일반모드 - 수류탄 / 저격모드 - 조준경
         if (Input.GetMouseButtonDown(1)) // 마우스 오른쪽 버튼 클릭
         {
             switch (wMode)
@@ -85,35 +91,42 @@ public class FPSPlayerFire : MonoBehaviour
                         * throwPower, ForceMode.Impulse);
                     break;
                 case WeaponMode.Sniper: // 저격 모드일 때 마우스 오른쪽 -> 확대/축소 조준경
-                    // if (!ZoomMode)
-                    // {
-                    //     Camera.main.fieldOfView = 15f;
-                    //     ZoomMode = true;
-                    // }
-                    // else
-                    // {
-                    //     Camera.main.fieldOfView = 60f;
-                    //     ZoomMode = false;
-                    // }
-
-                    float fov = ZoomMode ? 60f : 15f;
+                    ZoomMode = !ZoomMode; //현재 줌모드 변환
+                    
+                    float fov = ZoomMode ? 15f : 60f; // 저격모드 시, 조준경 확대 축소
                     Camera.main.fieldOfView = fov;
-                    ZoomMode = !ZoomMode;
+
+                    crosshair02_zoom.SetActive(ZoomMode);
+                    crosshair02.SetActive(!ZoomMode);
+                    
+                    /// 삼항연산자 늘린 버젼
+                    //if (!ZoomMode)
+                    //{
+                    //    crosshair02_zoom.SetActive(true);
+                    //    crosshair02.SetActive(false);
+                    //}
+                    //else
+                    //{
+                    //    crosshair02_zoom.SetActive(false);
+                    //    crosshair02.SetActive(true);
+                    //}
                     break;
             }
         }
+        #endregion
 
+        #region 무기 변경
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             wMode = WeaponMode.Normal;
             Camera.main.fieldOfView = 60f;
-
             wModeText.text = "Normal Mode";
 
             weapon01.SetActive(false);
             weapon02.SetActive(true);
             crosshair01.SetActive(false);
             crosshair02.SetActive(true);
+            crosshair02_zoom.SetActive(false);
             weapon01_R.SetActive(true);
             weapon02_R.SetActive(false);
         }
@@ -130,8 +143,10 @@ public class FPSPlayerFire : MonoBehaviour
             weapon01_R.SetActive(false);
             weapon02_R.SetActive(true);
         }
+        #endregion
     }
 
+    #region 총구 화염 이펙트
     IEnumerator ShootEffectOn(float duration)
     {
         int num = Random.Range(0, eff_Flash.Length - 1);
@@ -140,4 +155,5 @@ public class FPSPlayerFire : MonoBehaviour
         yield return new WaitForSeconds(duration);
         eff_Flash[num].SetActive(false);
     }
+    #endregion
 }
