@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7073db793b4bbba41967fee5c346c8b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 0}
   lineWidth: 0.05
   lineObjs: []
 --- !u!4 &1920726386
